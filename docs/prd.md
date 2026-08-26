@@ -1,90 +1,36 @@
-# 🛠️ Especificação Técnica (Tech Spec) - Roubank
+# 📄 Product Requirements Document (PRD) - Roubank
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server) necessários para o funcionamento do sistema bancário Roubank.
+## 1. Visão Geral e Objetivo
 
-## 1. Modelo de Dados (Diagrama ER)
+O **Roubank** é uma aplicação web didática que simula as operações básicas de uma instituição financeira (abertura de conta, depósitos, saques e extratos).
 
-Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
+**O grande diferencial (Regra de Negócio Principal):** Ao contrário dos bancos tradicionais modernos, o Roubank cobra **taxas abusivas** para absolutamente qualquer operação que o cliente realize. O objetivo do sistema é registrar as movimentações financeiras do usuário sempre subtraindo uma porcentagem ou valor fixo sob o pretexto de "taxas de manutenção" ou "impostos do banco".
 
-```mermaid
-erDiagram
-CLIENTE ||--o{ TRANSACAO : "realiza (e paga taxa)"
-CLIENTE {
-string id PK "Gerado automaticamente"
-string nome
-string cpf "Usado para o login"
-string senha
-float saldo "Atualizado a cada operação"
-}
-TRANSACAO {
-string id PK
-string clienteId FK "Vínculo com o Cliente"
-string tipo "DEPOSITO, SAQUE ou TAXA"
-float valor
-string data "Formato ISO (YYYY-MM-DD)"
-string descricao "Ex: 'Taxa de manutenção respiratória'"
-}
-```
+## 2. Atores do Sistema
 
-## 2. Dicionário de Dados
+- **Visitante:** Usuário não autenticado que acessa a página inicial e deseja abrir uma conta.
+- **Cliente:** Usuário autenticado que possui saldo (ou dívidas) no banco e realiza operações financeiras.
+- **O Banco (Sistema):** Ator invisível que aplica as regras de negócio e desconta as taxas automaticamente a cada transação do Cliente.
 
-Breve explicação das tabelas principais:
+## 3. Histórias de Usuário e Escopo
 
-- **Clientes:** Responsável por armazenar os dados de autenticação e o saldo consolidado do usuário.
-  - id: Identificador único gerado pelo JSON Server (String ou Hash).
-  - cpf: Chave de acesso do usuário. Em um cenário real seria único, mas para o MVP não há trava estrita no banco, apenas validação no front-end.
-  - saldo: Valor numérico (Float) que representa o dinheiro disponível. Pode ficar negativo devido à cobrança implacável de taxas do banco.
-- **Transações:** Registra o histórico financeiro. Regra de Negócio Crítica: Toda transação de SAQUE ou DEPOSITO feita pelo cliente deve gerar, via JavaScript, uma transação secundária automática do tipo TAXA, subtraindo um valor do saldo do cliente.
-  - clienteId: Chave estrangeira que vincula a transação ao cliente (padrão de nomenclatura exigido pelo JSON Server para rotas aninhadas).
-  - tipo: Aceita apenas os valores "SAQUE", "DEPOSITO" ou "TAXA".
-  - valor: Sempre um número positivo. O front-end decide se soma ou subtrai do saldo geral baseado no tipo.
+Abaixo estão as funcionalidades principais do MVP (Minimum Viable Product), escritas sob a perspectiva do usuário final.
 
-## 3. Rotas da API (JSON Server)
+### 👤 Épico 1: Autenticação e Conta
 
-A aplicação consome a API local simulada pelo JSON Server. Abaixo os principais endpoints:
+- **US01 - Abertura de Conta:** Como um Visitante, quero preencher um formulário com meus dados pessoais (Nome, CPF, Senha) para criar uma nova conta no Roubank.
+  - _Critérios de Aceitação:_ O CPF deve ser validado; todos os campos são obrigatórios; a conta deve iniciar com saldo R$ 0,00.
+- **US02 - Acesso ao Sistema (Login):** Como um Cliente, quero inserir meu CPF e Senha para acessar meu painel financeiro.
 
-- `GET /usuarios` - Retorna a lista de usuários.
-- `POST /usuarios` - Cadastra um novo usuário.
-- `GET /transacoes?id_usuario=1` - Retorna o extrato de um usuário específico.
+### 💰 Épico 2: Movimentações Financeiras
 
-## 4. Estrutura do Banco de Dados (db.json)
+- **US03 - Visualização de Saldo:** Como um Cliente logado, quero ver meu saldo total atualizado em destaque no painel principal, para saber quanto dinheiro (ainda) tenho.
+- **US04 - Realizar Depósito:** Como um Cliente, quero informar um valor para depositar na minha conta.
+  - _Critérios de Aceitação:_ O valor deve ser positivo; o sistema deve cobrar uma **"Taxa de Depósito" (ex: 2% do valor)** e creditar apenas o valor líquido na conta do cliente.
+- **US05 - Realizar Saque:** Como um Cliente, quero informar um valor para sacar da minha conta.
+  - _Critérios de Aceitação:_ O cliente não pode sacar mais do que o saldo disponível + limite; o sistema deve cobrar uma **"Taxa de Saque" (ex: R$ 5,00 fixos por saque)**, descontando o valor do saque + a taxa do saldo total.
 
-Esta é a representação em formato JSON do banco de dados simulado. Esta estrutura serve de contexto para ferramentas de IA e para o JSON Server inicializar a API Fake.
+### 📊 Épico 3: Histórico e Transparência
 
-```JSON
-{
-    "clientes": [
-    {
-        "id": "1",
-        "nome": "João da Silva",
-        "cpf": "12345678900",
-        "senha": "senha_super_segura",
-        "saldo": 850.50
-    }],
-    "transacoes": [
-    {
-        "id": "1",
-        "clienteId": "1",
-        "tipo": "DEPOSITO",
-        "valor": 1000.00,
-        "data": "2026-03-16",
-        "descricao": "Depósito inicial em espécie"
-    },
-    {
-        "id": "2",
-        "clienteId": "1",
-        "tipo": "TAXA",
-        "valor": 50.00,
-        "data": "2026-03-16",
-        "descricao": "Taxa de boas-vindas do Roubank"
-    },
-    {
-        "id": "3",
-        "clienteId": "1",
-        "tipo": "SAQUE",
-        "valor": 99.50,
-        "data": "2026-03-17",
-        "descricao": "Saque no caixa eletrônico"
-    }]
-}
-```
+- **US06 - Visualizar Extrato:** Como um Cliente, quero visualizar uma lista (tabela ou cards) com o histórico de todas as minhas transações (depósitos e saques).
+  - _Critérios de Aceitação:_ A lista deve mostrar a data, o tipo de transação, o valor bruto e **o valor da taxa cobrada** pelo Roubank, deixando claro o quanto o cliente perdeu na operação.
