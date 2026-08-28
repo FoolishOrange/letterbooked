@@ -30,8 +30,6 @@ erDiagram
 	AUTOR {
 		string id PK ""  
 		string nome  ""  
-		string biografia  ""  
-		string foto  ""  
 	}
 
 	CATEGORIA {
