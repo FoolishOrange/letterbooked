@@ -1,6 +1,6 @@
-# 🛠️ Especificação Técnica (Tech Spec) - Roubank
+# 🛠️ Especificação Técnica (Tech Spec) - Letterbooked
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server) necessários para o funcionamento do sistema bancário Roubank.
+Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server) necessários para o funcionamento do sistema Letterbooked.
 
 ## 1. Modelo de Dados (Diagrama ER)
 
