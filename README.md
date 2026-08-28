@@ -28,6 +28,7 @@ https://utfpr-gp.github.io/roubank-css/
 - **JavaScript:**
   - **JQuery** - Para realizar animações e manipulação do DOM.
   - **JSON Server** - Para simular uma API REST.
+  - **Open Library** - API que oferece informações de livros  
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
