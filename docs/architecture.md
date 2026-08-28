@@ -7,23 +7,55 @@ Este documento detalha a arquitetura técnica, o modelo de dados e os contratos 
 Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
 
 ```mermaid
+---
+config:
+  layout: elk
+---
 erDiagram
-CLIENTE ||--o{ TRANSACAO : "realiza (e paga taxa)"
-CLIENTE {
-string id PK "Gerado automaticamente"
-string nome
-string cpf "Usado para o login"
-string senha
-float saldo "Atualizado a cada operação"
-}
-TRANSACAO {
-string id PK
-string clienteId FK "Vínculo com o Cliente"
-string tipo "DEPOSITO, SAQUE ou TAXA"
-float valor
-string data "Formato ISO (YYYY-MM-DD)"
-string descricao "Ex: 'Taxa de manutenção respiratória'"
-}
+	direction TB
+	USUARIO {
+		string id PK ""  
+		string nome  ""  
+		string email  ""  
+		string senha  ""  
+	}
+
+	FAVORITO {
+		string id PK ""  
+		string usuarioId FK ""  
+		string livroId FK ""  
+		string data  ""  
+	}
+
+	AUTOR {
+		string id PK ""  
+		string nome  ""  
+		string biografia  ""  
+		string foto  ""  
+	}
+
+	CATEGORIA {
+		string id PK ""  
+		string nome  ""  
+		string descricao  ""  
+	}
+
+	LIVRO {
+		string id PK ""  
+		string titulo  ""  
+		string isbn  ""  
+		string descricao  ""  
+		string capa  ""  
+		int paginas  ""  
+		string dataPublicacao  ""  
+		string idioma  ""  
+		float avaliacao  ""  
+	}
+
+	USUARIO||--o{FAVORITO:"possui"
+	LIVRO||--o{FAVORITO:"é salvo em"
+	AUTOR}o--||LIVRO:"escreve"
+	LIVRO}o--||CATEGORIA:"pertence"
 ```
 
 ## 2. Dicionário de Dados
