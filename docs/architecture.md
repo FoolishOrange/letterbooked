@@ -43,12 +43,10 @@ erDiagram
 	LIVRO {
 		string id PK ""  
 		string titulo  ""  
-		string isbn  ""  
 		string descricao  ""  
 		string capa  ""  
 		int paginas  ""  
 		string dataPublicacao  ""  
-		string idioma  ""  
 		float avaliacao  ""  
 	}
 
