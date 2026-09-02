@@ -1,34 +1,42 @@
-# letterbooked
+# loreshelf
 
-### **Autor:** Leonardo Karpinski de Almeida
+### **Autores:** [Nome 1], [Nome 2], [Nome 3]
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em interaçõoes comuns de um site de notas de peças de entretenimento (ex: cadastrar, avaliar, salvar...).
+O LoreShelf é uma aplicação web de biblioteca digital desenvolvida para facilitar a descoberta, pesquisa e organização de livros.
+
+A aplicação permite que os usuários pesquisem livros por título, autor ou ISBN, visualizem informações detalhadas sobre as obras e organizem uma biblioteca pessoal através do sistema de favoritos.
+
+Os dados dos livros são obtidos dinamicamente através de APIs públicas, como a Open Library e/ou Google Books API. O frontend da aplicação é desenvolvido utilizando HTML, Sass (SCSS), JavaScript e um framework CSS.
 
 ## 📚 Documentação do Projeto
 
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
-- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
-- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Diagrama de banco de dados (DER), dicionário de dados e rotas da API (JSON Server).
+- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral do projeto, escopo, atores e histórias de usuário.
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Diagrama de entidades e relacionamentos (DER), dicionário de dados e especificações técnicas da aplicação.
+- [🎨 Design System](./docs/design-system.md) - Identidade visual, cores, tipografia e padrões de componentes utilizados no projeto.
 
 ## 🎨 Design
 
-- [🎨 Design System](./docs/design-system.md) - Identidade visual
-- [🖼️ Protótipo no Figma](https://www.figma.com/file/a1VDbO1aNfZyulQPxT99OE/beleza-em-dia?node-id=3%3A80) - Telas interativas da aplicação.
+- [🎨 Design System](./docs/design-system.md) - Identidade visual e padrões de componentes.
+- [🖼️ Protótipo no Stitch](INSERIR_LINK_DO_STITCH) - Protótipo das telas da aplicação.
 
 ## 🌐 Site em Produção - GitHub Pages
 
-https://utfpr-gp.github.io/roubank-css/
+INSERIR_LINK_DO_GITHUB_PAGES
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** MaterializeCSS
-- **JavaScript:**
-  - **JQuery** - Para realizar animações e manipulação do DOM.
-  - **JSON Server** - Para simular uma API REST.
-  - **Open Library** - API que oferece informações de livros  
+- **HTML5** - Estrutura das páginas da aplicação.
+- **Sass (SCSS)** - Pré-processador CSS utilizado para organização e modularização dos estilos.
+- **Framework CSS:** MaterializeCSS / Bootstrap
+- **JavaScript** - Lógica da aplicação, manipulação do DOM e integração com APIs.
+- **jQuery** - Manipulação do DOM e interatividade.
+- **Open Library API** - API pública utilizada para consulta de livros.
+- **Google Books API** - API pública utilizada como fonte complementar de informações sobre livros.
+- **Web Storage API (localStorage)** - Persistência local de informações do usuário, como favoritos.
 
-## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
+# ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
@@ -46,7 +54,7 @@ https://utfpr-gp.github.io/roubank-css/
 #### RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente.
 
 - [ ] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
-- [ ] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
+- [ ] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, senha e outros campos).
 - [ ] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
 - [ ] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
 
@@ -60,11 +68,18 @@ https://utfpr-gp.github.io/roubank-css/
 
 #### RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
 
-- [ ] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos)
-- [ ] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin).
+- [ ] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos).
+- [ ] ID 21 - Integra e configura um plugin jQuery relevante.
 
 #### RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
 
 - [ ] ID 22 - Realiza requisições assíncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulário.
 - [ ] ID 23 - Realiza requisições assíncronas para uma API fake para exibir dados na página.
-- [ ] ID 24 - Realiza requisições assíncronas para APIs públicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
+- [ ] ID 24 - Realiza requisições assíncronas para APIs públicas reais (Open Library, Google Books etc.), exibindo os dados e tratando erros.
+
+## 🚀 Manual de execução
+
+- Clonar o repositório utilizando:
+
+  ```bash
+  git clone URL_DO_REPOSITORIO
