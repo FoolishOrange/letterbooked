@@ -12,46 +12,45 @@ config:
   layout: elk
 ---
 erDiagram
-	direction TB
-	USUARIO {
-		string id PK ""  
-		string nome  ""  
-		string email  ""  
-		string senha  ""  
-	}
+    USUARIO ||--o{ FAVORITO : possui
+    FAVORITO }o--|| LIVRO : referencia
+    AUTOR ||--o{ LIVRO : escreve
+    CATEGORIA ||--o{ LIVRO : pertence
 
-	FAVORITO {
-		string id PK ""  
-		string usuarioId FK ""  
-		string livroId FK ""  
-		string data  ""  
-	}
+    USUARIO {
+        int id PK
+        string nome
+        string email
+        string senha
+        string foto
+    }
 
-	AUTOR {
-		string id PK ""  
-		string nome  ""  
-	}
+    FAVORITO {
+        int id PK
+        int usuarioId FK
+        int livroId FK
+        date data
+    }
 
-	CATEGORIA {
-		string id PK ""  
-		string nome  ""  
-		string descricao  ""  
-	}
+    LIVRO {
+        int id PK
+        string titulo
+        string sinopse
+        string capa
+        int paginas
+        date dataPublicacao
+        decimal avaliacao
+    }
 
-	LIVRO {
-		string id PK ""  
-		string titulo  ""  
-		string descricao  ""  
-		string capa  ""  
-		int paginas  ""  
-		string dataPublicacao  ""  
-		float avaliacao  ""  
-	}
+    AUTOR {
+        int id PK
+        string nome
+    }
 
-	USUARIO||--o{FAVORITO:"possui"
-	LIVRO||--o{FAVORITO:"é salvo em"
-	AUTOR}o--||LIVRO:"escreve"
-	LIVRO}o--||CATEGORIA:"pertence"
+    CATEGORIA {
+        int id PK
+        string nome
+    }
 ```
 
 ## 2. Dicionário de Dados
