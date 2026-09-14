@@ -19,7 +19,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 🎨 Design
 
 - [🎨 Design System](./docs/design-system.md) - Identidade visual e padrões de componentes.
-- [🖼️ Protótipo no Stitch](INSERIR_LINK_DO_STITCH) - Protótipo das telas da aplicação.
+- [🖼️ Protótipo no Stitch]((https://www.figma.com/design/29LHHCBpiJoam519z6mPCp/Untitled?node-id=0-1&t=xuUvfzdn3ary8XWl-1)) - Protótipo das telas da aplicação.
 
 ## 🌐 Site em Produção - GitHub Pages
 
