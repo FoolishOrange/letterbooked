@@ -1,8 +1,17 @@
-# 🛠️ Especificação Técnica (Tech Spec) - Letterbooked
+# 🛠️ Especificação Técnica (Tech Spec) - LoreShelf
 
-Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API (via JSON Server) necessários para o funcionamento do sistema Letterbooked.
+Este documento detalha a arquitetura técnica, o modelo de dados e os contratos de API necessários para o funcionamento do sistema LoreShelf.
 
-## 1. Modelo de Dados (Diagrama ER)
+1. Modelo de Dados (Diagrama ER)
+
+O LoreShelf possui uma estrutura de dados simplificada. Os livros são obtidos dinamicamente através da Open Library API, enquanto os identificadores dos livros favoritados são armazenados localmente utilizando a Web Storage API (localStorage).
+
+O sistema não necessita de cadastro, login ou banco de dados próprio para o funcionamento do MVP.
+
+As principais informações utilizadas pela aplicação são:
+
+LIVRO: representa uma obra obtida através da API pública.
+FAVORITO: representa a identificação de um livro salvo pelo usuário em sua biblioteca local.
 
 Abaixo está o Diagrama Entidade-Relacionamento (DER) que representa a estrutura do nosso "banco de dados" (`db.json`) e como as informações se conectam.
 
