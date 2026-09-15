@@ -64,7 +64,7 @@ erDiagram
 
 ## 2. Dicionário de Dados
 
- - Livros: Os dados são obtidos dinamicamente através da Open Library API. A aplicação utiliza as informações retornadas pela API para montar os cards e a página de detalhes.
+**Livros:** Os dados são obtidos dinamicamente através da Open Library API. A aplicação utiliza as informações retornadas pela API para montar os cards e a página de detalhes.
  - id: Identificador único da obra fornecido pela API.
  - titulo: Nome do livro.
  - autor: Nome do autor ou autores.
@@ -73,7 +73,7 @@ erDiagram
  - paginas: Número de páginas da obra, quando disponível.
  - dataPublicacao: Ano ou data de publicação.
  - idioma: Idioma associado à obra.
- - Favoritos: Armazena localmente os livros selecionados pelo usuário.
+**Favoritos:** Armazena localmente os livros selecionados pelo usuário.
  - livroId: Identificador utilizado para encontrar novamente o livro através da API.
  - data: Data em que o livro foi favoritado.
 
