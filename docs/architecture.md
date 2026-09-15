@@ -89,11 +89,13 @@ Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos f
 
 ## 4. Rotas da API (JSON Server)
 
-A aplicação consome a API local simulada pelo JSON Server. Abaixo os principais endpoints:
+A aplicação consome a Open Library API para realizar pesquisas e obter informações sobre livros.
 
-- `GET /usuarios` - Retorna a lista de usuários.
-- `POST /usuarios` - Cadastra um novo usuário.
-- `GET /transacoes?id_usuario=1` - Retorna o extrato de um usuário específico.
+Principais endpoints utilizados:
+
+ - `GET /search.json?q={termo}` - Pesquisa livros utilizando um termo geral.
+ - `GET /search.json?title={titulo}` - Pesquisa livros pelo título.
+ - `GET /search.json?author={autor}` - Pesquisa livros pelo autor.
 
 ## 5. Estrutura do Banco de Dados (db.json)
 
