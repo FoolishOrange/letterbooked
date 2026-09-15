@@ -85,7 +85,8 @@ Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos f
  - Open Library API - Version 5b92e77
 
 **Framework**
- - Bootstrap - Version 5.3.8 
+ - Bootstrap - Version 5.3.8
+   
 **AIs**
  - ChatGPT - GPT-5.6 Luna
  - Stitch - Gemini 3.8 Flash
