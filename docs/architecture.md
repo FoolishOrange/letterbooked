@@ -62,18 +62,24 @@ erDiagram
     }
 ```
 
-## 2. Dicionário de Dados
+2. Dicionário de Dados
 
-Breve explicação das tabelas principais:
+Breve explicação dos principais dados utilizados pela aplicação:
 
-- **Clientes:** Responsável por armazenar os dados de autenticação e o saldo consolidado do usuário.
-  - id: Identificador único gerado pelo JSON Server (String ou Hash).
-  - cpf: Chave de acesso do usuário. Em um cenário real seria único, mas para o MVP não há trava estrita no banco, apenas validação no front-end.
-  - saldo: Valor numérico (Float) que representa o dinheiro disponível. Pode ficar negativo devido à cobrança implacável de taxas do banco.
-- **Transações:** Registra o histórico financeiro. Regra de Negócio Crítica: Toda transação de SAQUE ou DEPOSITO feita pelo cliente deve gerar, via JavaScript, uma transação secundária automática do tipo TAXA, subtraindo um valor do saldo do cliente.
-  - clienteId: Chave estrangeira que vincula a transação ao cliente (padrão de nomenclatura exigido pelo JSON Server para rotas aninhadas).
-  - tipo: Aceita apenas os valores "SAQUE", "DEPOSITO" ou "TAXA".
-  - valor: Sempre um número positivo. O front-end decide se soma ou subtrai do saldo geral baseado no tipo.
+Livros: Os dados são obtidos dinamicamente através da Open Library API. A aplicação utiliza as informações retornadas pela API para montar os cards e a página de detalhes.
+id: Identificador único da obra fornecido pela API.
+titulo: Nome do livro.
+autor: Nome do autor ou autores.
+sinopse: Descrição ou resumo da obra, quando disponível.
+capa: URL utilizada para carregar a capa do livro.
+paginas: Número de páginas da obra, quando disponível.
+dataPublicacao: Ano ou data de publicação.
+idioma: Idioma associado à obra.
+Favoritos: Armazena localmente os livros selecionados pelo usuário.
+livroId: Identificador utilizado para encontrar novamente o livro através da API.
+data: Data em que o livro foi favoritado.
+
+Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos favoritos. Ao tentar favoritar uma obra que já está na biblioteca, o sistema deve manter apenas uma ocorrência.
 
 ## 3. Rotas da API (JSON Server)
 
