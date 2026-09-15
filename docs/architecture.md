@@ -62,22 +62,20 @@ erDiagram
     }
 ```
 
-2. Dicionário de Dados
+## 2. Dicionário de Dados
 
-Breve explicação dos principais dados utilizados pela aplicação:
-
-Livros: Os dados são obtidos dinamicamente através da Open Library API. A aplicação utiliza as informações retornadas pela API para montar os cards e a página de detalhes.
-id: Identificador único da obra fornecido pela API.
-titulo: Nome do livro.
-autor: Nome do autor ou autores.
-sinopse: Descrição ou resumo da obra, quando disponível.
-capa: URL utilizada para carregar a capa do livro.
-paginas: Número de páginas da obra, quando disponível.
-dataPublicacao: Ano ou data de publicação.
-idioma: Idioma associado à obra.
-Favoritos: Armazena localmente os livros selecionados pelo usuário.
-livroId: Identificador utilizado para encontrar novamente o livro através da API.
-data: Data em que o livro foi favoritado.
+ - Livros: Os dados são obtidos dinamicamente através da Open Library API. A aplicação utiliza as informações retornadas pela API para montar os cards e a página de detalhes.
+ - id: Identificador único da obra fornecido pela API.
+ - titulo: Nome do livro.
+ - autor: Nome do autor ou autores.
+ - sinopse: Descrição ou resumo da obra, quando disponível.
+ - capa: URL utilizada para carregar a capa do livro.
+ - paginas: Número de páginas da obra, quando disponível.
+ - dataPublicacao: Ano ou data de publicação.
+ - idioma: Idioma associado à obra.
+ - Favoritos: Armazena localmente os livros selecionados pelo usuário.
+ - livroId: Identificador utilizado para encontrar novamente o livro através da API.
+ - data: Data em que o livro foi favoritado.
 
 Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos favoritos. Ao tentar favoritar uma obra que já está na biblioteca, o sistema deve manter apenas uma ocorrência.
 
