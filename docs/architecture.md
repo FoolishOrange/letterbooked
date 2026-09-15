@@ -86,7 +86,10 @@ Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos f
 
 **Framework**
  - Bootstrap - Version 5.3.8 
-
+**AIs**
+ - ChatGPT - GPT-5.6 Luna
+ - Stitch - Gemini 3.8 Flash
+ - Mermaid AI - Version 12.0.0
 ## 4. Rotas da API (JSON Server)
 
 A aplicação consome a Open Library API para realizar pesquisas e obter informações sobre livros.
