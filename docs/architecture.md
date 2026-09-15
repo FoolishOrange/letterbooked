@@ -80,8 +80,10 @@ erDiagram
 Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos favoritos. Ao tentar favoritar uma obra que já está na biblioteca, o sistema deve manter apenas uma ocorrência.
 
 ## 3 Tecnologias:
+
 **APIs** 
  - Open Library API - Version 5b92e77
+
 **Framework**
  - Bootstrap - Version 5.3.8 
 
