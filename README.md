@@ -1,6 +1,6 @@
 # loreshelf
 
-### **Autores:** [Nome 1], [Nome 2], [Nome 3]
+### **Autores:** Leonardo Karpinski de Almeida
 
 O LoreShelf é uma aplicação web de biblioteca digital desenvolvida para facilitar a descoberta, pesquisa e organização de livros.
 
