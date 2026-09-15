@@ -79,7 +79,13 @@ erDiagram
 
 Regra de Negócio: Um mesmo livro não deve ser adicionado mais de uma vez aos favoritos. Ao tentar favoritar uma obra que já está na biblioteca, o sistema deve manter apenas uma ocorrência.
 
-## 3. Rotas da API (JSON Server)
+## 3 Tecnologias:
+**APIs** 
+ - Open Library API - Version 5b92e77
+**Framework**
+ - Bootstrap - Version 5.3.8 
+
+## 4. Rotas da API (JSON Server)
 
 A aplicação consome a API local simulada pelo JSON Server. Abaixo os principais endpoints:
 
@@ -87,7 +93,7 @@ A aplicação consome a API local simulada pelo JSON Server. Abaixo os principai
 - `POST /usuarios` - Cadastra um novo usuário.
 - `GET /transacoes?id_usuario=1` - Retorna o extrato de um usuário específico.
 
-## 4. Estrutura do Banco de Dados (db.json)
+## 5. Estrutura do Banco de Dados (db.json)
 
 Esta é a representação em formato JSON do banco de dados simulado. Esta estrutura serve de contexto para ferramentas de IA e para o JSON Server inicializar a API Fake.
 
