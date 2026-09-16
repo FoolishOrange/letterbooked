@@ -60,8 +60,8 @@ INSERIR_LINK_DO_GITHUB_PAGES
 
 #### RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web.
 
-- [ X ] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
-- [ X ] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
+- [x] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
+- [x] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
 - [ ] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
 - [ ] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
 - [ ] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
