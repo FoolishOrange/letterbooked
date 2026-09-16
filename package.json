@@ -1,0 +1,31 @@
+{
+  "name": "letterbooked",
+  "version": "1.0.0",
+  "description": "O LoreShelf é uma aplicação web de biblioteca digital desenvolvida para facilitar a descoberta, pesquisa e organização de livros.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoolishOrange/letterbooked.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FoolishOrange/letterbooked/issues"
+  },
+  "homepage": "https://github.com/FoolishOrange/letterbooked#readme",
+  "dependencies": {
+    "jquerry": "^0.0.1-security",
+    "uuid": "^14.0.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
