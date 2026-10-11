@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/FoolishOrange/letterbooked#readme",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "jquerry": "^0.0.1-security",
     "uuid": "^14.0.2"
   },
