@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dom Casmurro - Machado de Assis | EntreLinhas</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap compilado pelo Sass -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+  <!-- Estilos personalizados do projeto -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVBAR PRINCIPAL -->
+  <header class="custom-header">
+    <div class="container-xl d-flex justify-content-between align-items-center py-2 px-3 px-md-4">
+      
+      <!-- Brand Logo & Busca Rápida -->
+      <div class="d-flex align-items-center gap-3 gap-md-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none" href="index.html">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1WyhKmhhGFSf7rDL_OxRfQW-oLUwPMqLBmIOU8sj8qGxGnoYRZvKCv5X1bvaB6y8aK-mGACU-mNniQhPoo7lyP0R7fG5UcWmZvfmEsn-BOszDIDe30SqZujB_3wGzg2I1WTXCa6im9WjDwhDGf-g7iBzbMtuJeRugGdgLxglcSO-cgngGqw0q_FGa1uaOdnlTip3OTQrmNedVS3Juehkxs3RxQLUewn30yN_ZJJ5SNwjxlPBjqCWB7k9OI" alt="LoreShelf - EntreLinhas" height="36" class="d-inline-block align-text-top">
+        </a>
+
+        <!-- Campo de Pesquisa Rápida (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center position-relative">
+          <span class="material-symbols-outlined position-absolute ms-3 text-muted-custom fs-6">search</span>
+          <input class="form-control form-control-sm ps-5 pe-3 py-1 bg-surface-low border rounded-pill" type="text" placeholder="Pesquisar por título, autor..." style="width: 220px; font-size: 0.85rem;">
+        </div>
+      </div>
+
+      <!-- Links de Navegação -->
+      <nav class="d-none d-md-flex align-items-center gap-4">
+        <a class="nav-link-custom" href="index.html">
+          <span class="material-symbols-outlined fs-6">explore</span>
+          Explorar Livros
+        </a>
+        <a class="nav-link-custom" href="favoritos.html">
+          <span>Meus Favoritos</span>
+          <span class="badge-fav-count" id="nav-fav-badge">4</span>
+        </a>
+      </nav>
+
+      <!-- Ações de Cabeçalho & Botão Entrar -->
+      <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-1">
+          <a class="header-icon-btn text-primary-custom" href="favoritos.html" title="Meus Favoritos">
+            <span class="material-symbols-outlined fill fs-5">favorite</span>
+          </a>
+          <button class="header-icon-btn d-none d-sm-inline-flex" title="Marcadores" type="button">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+          <a class="header-icon-btn" href="login.html" title="Perfil de Usuário">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </div>
+
+        <div class="vr mx-2 d-none d-sm-block text-secondary opacity-25" style="height: 24px;"></div>
+
+        <a class="btn btn-primary-custom d-flex align-items-center gap-1 text-decoration-none" href="login.html">
+          <span class="material-symbols-outlined fs-6">login</span>
+          <span>Entrar</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 2. CONTEÚDO PRINCIPAL -->
+  <main class="container-xl py-4 py-md-5 flex-grow-1 px-3 px-md-4">
+
+    <!-- Navegação Breadcrumbs & Botão Voltar -->
+    <section class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center pb-3 mb-4 border-bottom gap-2">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a class="text-decoration-none text-muted-custom" href="index.html">Início</a></li>
+          <li class="breadcrumb-item"><a class="text-decoration-none text-muted-custom" href="index.html">Explorar Livros</a></li>
+          <li class="breadcrumb-item text-muted-custom">Clássicos Brasileiros</li>
+          <li class="breadcrumb-item active text-dark fw-semibold" aria-current="page">Dom Casmurro</li>
+        </ol>
+      </nav>
+
+      <a class="btn btn-sm btn-outline-custom d-inline-flex align-items-center gap-1" href="index.html">
+        <span class="material-symbols-outlined fs-6">arrow_back</span>
+        <span>Voltar para a pesquisa</span>
+      </a>
+    </section>
+
+    <!-- Divisão em 12 Colunas Conforme o Design System (Split 5:7) -->
+    <div class="row g-4 g-lg-5 mb-5">
+
+      <!-- COLUNA DA ESQUERDA (5 Colunas): Capa, Ações Rápidas & Ficha Técnica -->
+      <div class="col-12 col-lg-5">
+        <div class="position-sticky" style="top: 85px;">
+          
+          <!-- Capa do Livro com Efeito de Relevo e Sombra -->
+          <div class="book-card mb-4 border-0 shadow-lg">
+            <div class="book-cover-container">
+              <div class="book-cover-wrapper rounded-3">
+                  <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKetA1reYd3Gg7lLqHh2cSI1arIUC8O1zhT2GeafJW0OXxC-7CCSfPra1nrRkIdCuSDAIlItP6Y6KFdvOcRXg7blFog7YDV6xF6YHamIpIYHWnqTHC2phy6p88ijrZuHQPUhR8qE-52VaohQESHTpYxRaygC-8JV9v_qG9J-a2O78Hml3G6VhrQMYT48q_350h8ZrUsII6sDgSOkC5UzowrglORZGZKT8cd9E0vhzH05Pv8745yfZF" alt="Capa de Dom Casmurro">
+                  <div class="book-spine-effect"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Banner de Status na Estante -->
+          <div class="d-flex align-items-center justify-content-between p-3 rounded-3 bg-surface-low border mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              <span class="small fw-semibold text-dark">Salvo na sua estante</span>
+            </div>
+            <span class="badge-status-lido">LIDO</span>
+          </div>
+
+          <!-- Botões de Ação Principal -->
+          <div class="d-grid gap-2 mb-4">
+            <button class="btn btn-primary-custom py-2 d-flex align-items-center justify-content-center gap-2" id="detail-fav-btn" data-book-title="Dom Casmurro" type="button">
+              <span class="material-symbols-outlined fs-5 fill">favorite</span>
+              <span class="btn-label-text">Favoritado ♡</span>
+            </button>
+            <div class="row g-2">
+              <div class="col-6">
+                <button class="btn btn-outline-custom w-100 py-2 d-flex align-items-center justify-content-center gap-1" type="button">
+                  <span class="material-symbols-outlined fs-5 text-success">check_circle</span>
+                  <span>Lido</span>
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-outline-custom w-100 py-2 d-flex align-items-center justify-content-center gap-1" type="button">
+                  <span class="material-symbols-outlined fs-5">share</span>
+                  <span>Compartilhar</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ficha Técnica / Metadados -->
+          <div class="card border rounded-3 p-3 bg-white">
+            <h4 class="font-title-book fs-6 text-dark mb-3 border-bottom pb-2">Especificações da Edição</h4>
+            <div class="row g-2 small">
+              <div class="col-6 text-muted-custom">PÁGINAS:</div>
+              <div class="col-6 text-end fw-semibold text-dark">256 págs</div>
+              <div class="col-6 text-muted-custom">PUBLICAÇÃO:</div>
+              <div class="col-6 text-end fw-semibold text-dark">1899</div>
+              <div class="col-6 text-muted-custom">IDIOMA:</div>
+              <div class="col-6 text-end fw-semibold text-dark">Português</div>
+              <div class="col-6 text-muted-custom">EDITORA:</div>
+              <div class="col-6 text-end fw-semibold text-dark">Garnier / Domínio Público</div>
+              <div class="col-6 text-muted-custom">ACESSO:</div>
+              <div class="col-6 text-end fw-semibold text-success d-flex align-items-center justify-content-end gap-1">
+                <span class="material-symbols-outlined fs-6">lock_open</span> Livre
+              </div>
+              <div class="col-6 text-muted-custom">ISBN:</div>
+              <div class="col-6 text-end fw-semibold text-dark">978-85-359-0277-8</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COLUNA DA DIREITA (7 Colunas): Conteúdo Editorial, Sinopse & Biografia -->
+      <div class="col-12 col-lg-7">
+        
+        <!-- Categorias e Flags de Domínio Público -->
+        <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+          <span class="badge bg-surface-low border text-primary-custom label-caps">Clássico da Literatura Brasileira</span>
+          <span class="badge bg-surface-low border text-dark label-caps">Realismo</span>
+          <span class="badge bg-surface-low border text-success label-caps">Domínio Público</span>
+        </div>
+
+        <!-- Título do Livro e Autor -->
+        <h1 class="font-display display-4 text-dark mb-2">Dom Casmurro</h1>
+        <p class="fs-5 text-muted-custom mb-3">
+          Por <a class="text-primary-custom text-decoration-none fw-bold" href="#">Machado de Assis <span class="material-symbols-outlined fs-6">open_in_new</span></a> &bull; Membro Fundador da Academia Brasileira de Letras
+        </p>
+
+        <!-- Indicador de Avaliações e Tag de Vestibular -->
+        <div class="d-flex align-items-center gap-3 pb-3 mb-4 border-bottom flex-wrap">
+          <div class="star-rating fs-5">
+            <span class="material-symbols-outlined fill fs-5">star</span>
+            <span class="material-symbols-outlined fill fs-5">star</span>
+            <span class="material-symbols-outlined fill fs-5">star</span>
+            <span class="material-symbols-outlined fill fs-5">star</span>
+            <span class="material-symbols-outlined fill fs-5">star_half</span>
+            <span class="ms-1 text-dark fw-bold">4.8</span>
+          </div>
+          <span class="text-muted-custom small">(1.420 avaliações de estudantes e acadêmicos)</span>
+          <span class="badge bg-warning-subtle text-warning-emphasis label-caps d-inline-flex align-items-center gap-1">
+            <span class="material-symbols-outlined fs-6">menu_book</span> Leitura Obrigatória de Vestibular
+          </span>
+        </div>
+
+        <!-- Sinopse da Obra -->
+        <section class="mb-5">
+          <h2 class="font-title-book fs-4 text-dark mb-3 d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined text-primary-custom">subject</span>
+            Sinopse da Obra
+          </h2>
+          <p class="text-secondary leading-relaxed" style="font-size: 1.05rem; line-height: 1.8;">
+            Narrado em primeira pessoa pelo já idoso Bento Santiago (Bentinho), o romance reconstrói sua história de amor com Capitu, vizinha de infância na cidade do Rio de Janeiro do século XIX. Prometido pela mãe ao seminário por força de uma promessa religiosa, Bento consegue escapar do sacerdócio e casa-se com sua amada.
+          </p>
+          <p class="text-secondary leading-relaxed" style="font-size: 1.05rem; line-height: 1.8;">
+            No entanto, o ciúme obsessivo do narrador transforma a convivência em tormento, culminando na célebre suspeita de adultério com seu melhor amigo, Escobar, materializada nos traços do filho Ezequiel. A ambiguidade magistral de Machado de Assis deixa em aberto para o leitor a eterna questão: Capitu traiu ou não traiu?
+          </p>
+        </section>
+
+        <!-- Citação Literária em Destaque (Callout) -->
+        <div class="p-4 rounded-3 border-start border-4 border-danger bg-surface-low mb-5 shadow-xs">
+          <p class="font-display fst-italic fs-5 text-dark mb-2" style="line-height: 1.6;">
+            “Capitu era Capitu, isto é, uma criatura mui particular, mais mulher do que eu era homem. Olhos de ressaca? Vá, de ressaca. É o que me dá ideia daquela feição nova...”
+          </p>
+          <footer class="blockquote-footer small text-muted-custom mb-0 mt-2">
+            Machado de Assis em <cite title="Dom Casmurro">Capítulo XXXII, Os Olhos de Ressaca</cite>
+          </footer>
+        </div>
+
+        <!-- Temas Centrais & Análise Crítica -->
+        <section class="mb-5">
+          <h2 class="font-title-book fs-4 text-dark mb-3 d-flex align-items-center gap-2">
+            <span class="material-symbols-outlined text-primary-custom">psychology</span>
+            Temas Centrais &amp; Eixos Temáticos
+          </h2>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="filter-chip active">Ciúme &amp; Obsessão</span>
+            <span class="filter-chip active">Narrador Não Confiável</span>
+            <span class="filter-chip active">Sociedade Fluminense do Século XIX</span>
+            <span class="filter-chip active">Ambiguidade Psicológica</span>
+            <span class="filter-chip active">Realismo Psicológico</span>
+          </div>
+        </section>
+
+        <!-- Seção Sobre o Autor -->
+        <section class="card border rounded-3 p-4 bg-white shadow-xs mb-4">
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="rounded-circle bg-surface-low border d-flex align-items-center justify-content-center text-primary-custom" style="width: 54px; height: 54px;">
+              <span class="material-symbols-outlined fs-3">history_edu</span>
+            </div>
+            <div>
+              <h3 class="font-title-book fs-5 text-dark mb-0">Machado de Assis</h3>
+              <p class="text-muted-custom small mb-0">Rio de Janeiro (1839 – 1908)</p>
+            </div>
+          </div>
+          <p class="text-secondary small mb-0 leading-relaxed">
+            Joaquim Maria Machado de Assis é amplamente considerado o maior escritor da literatura brasileira. Fundador e primeiro presidente da Academia Brasileira de Letras, inaugurou o Realismo no Brasil com obras marcadas por fina ironia, ceticismo filosófico e profunda penetração psicológica.
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- 3. OBRAS RELACIONADAS & DO MESMO AUTOR -->
+    <section class="pt-5 border-top">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="font-display h3 text-dark mb-1">Obras Relacionadas &amp; Do Mesmo Autor</h2>
+          <p class="text-muted-custom small mb-0">Explore outros títulos fundamentais do Realismo Brasileiro</p>
+        </div>
+        <a class="btn btn-sm btn-outline-custom d-none d-sm-inline-flex align-items-center gap-1" href="index.html">
+          <span>Ver acervo completo</span>
+          <span class="material-symbols-outlined fs-6">chevron_right</span>
+        </a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+
+        <!-- Livro Relacionado 1 -->
+        <div class="col">
+          <article class="book-card">
+            <div class="book-cover-container">
+              <div class="book-cover-wrapper" style="background-color: #223326;">
+                <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE8ZsJi4fOxwo0XT4uVMveBMf1T2_2I7NUHF7bXjrfSHtuM6RKabzb_8w1IwU_r5fZQHbh9LCBUoSYln1WcxF2l9w-EbEbZEGzd0twQ0vQU5NB2LxEdIulcE19XjDNseOl0w8GZHrBi6bbl1UUy2qoyZhkE8C2CuDKdhzWhi12FNpKWlEoFMrjIUyDZ9KLev6D29T6BctUaJeNT2XOXWj0kxsbBW_5BsuOxtMSx6qFpURxVce6D7Jl" alt="Memórias Póstumas">
+                <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Realismo</span>
+            </div>
+            </div>
+            <div class="book-card-body">
+              <div>
+                <h4 class="font-title-book fs-6 text-dark mb-1 text-truncate">Memórias Póstumas</h4>
+                <p class="text-muted-custom small mb-0">Machado de Assis</p>
+              </div>
+              <a class="btn btn-sm btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Livro Relacionado 2 -->
+        <div class="col">
+          <article class="book-card">
+            <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c24;">
+              <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4AtTdRquDeuaaorN7v_lZ8TElDJSYqLs1X4iXBdK_O6P80RfeGPyS7_K6_CYCiL0MJUdMZKSyfFL5nPkfiHyqQzPuJ8Yc9l7KxkfPFM8u1kya-YFiaqHEo7-LJVam0zmHBLwiYswephPhmWNp7IlDUlNAcJHaGkU3lfLUdbxRUok5VSM3ywmzHIEAppYij996dnp28o3dcMDj-EdK9b26BcwEM0AmZN8mlIdqE-D9XWECRlo11SyA" alt="Quincas Borba">
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Realismo</span>
+            </div>
+            </div>
+            <div class="book-card-body">
+              <div>
+                <h4 class="font-title-book fs-6 text-dark mb-1 text-truncate">Quincas Borba</h4>
+                <p class="text-muted-custom small mb-0">Machado de Assis</p>
+              </div>
+              <a class="btn btn-sm btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Livro Relacionado 3 -->
+        <div class="col">
+          <article class="book-card">
+            <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #2e3c40;">
+              <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPBhSBjPGqpSIe4RzPoQBc9XnMvTf_3C8KfJDNk5kQiD_xh4ktgwiDFBF3unurB3ypy8TRZGnYir3YO5lRoq0HDV_TTXc6gupClagx71kHByOx1FA0eNclKtchAwT7AFYhH1x7DYC7481L7qqEqtg_FpeUPtOYoGg_n8kccJYjW1TkAIGUw27P4hh2bz4oMAxTvnqOM0EihcDrY-afhPDeNJsTgxsNXIH01THTu0S9O0H4TP17R-Cm" alt="Helena">
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Romantismo</span>
+            </div>
+            </div>
+            <div class="book-card-body">
+              <div>
+                <h4 class="font-title-book fs-6 text-dark mb-1 text-truncate">Helena</h4>
+                <p class="text-muted-custom small mb-0">Machado de Assis</p>
+              </div>
+              <a class="btn btn-sm btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Livro Relacionado 4 -->
+        <div class="col">
+          <article class="book-card">
+            <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #422119;">
+              <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA29cnhN2akmFi_a-xgCtsvqT94ppw-pSS4VlTZzkJ1mhHzrO-ibNwmKTbZSZ5Y9efR8XAfTBaGpVwLYi07KuWYvEAVyeNN1VvAlvkOdMsyroJIaZeO8TN2l1Qp2_8yD8sN1gzLjTUGCHHbICqmk40xMd9XYtPmS8bc3JIWE2FCqaltu1xAxZrl59PQPFvOP6jk_w1qZfiVw6-iGrW8F_Vo_FpQCFdN9pQV4q50zfgBHK8fplGXHpy" alt="O Alienista">
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Sátira &amp; Conto</span>
+            </div>
+            </div>
+            <div class="book-card-body">
+              <div>
+                <h4 class="font-title-book fs-6 text-dark mb-1 text-truncate">O Alienista</h4>
+                <p class="text-muted-custom small mb-0">Machado de Assis</p>
+              </div>
+              <a class="btn btn-sm btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 4. RODAPÉ EDITORIAL -->
+  <footer class="custom-footer">
+    <div class="container-xl px-3 px-md-4">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <p class="mb-1 text-dark fw-bold">LoreShelf / EntreLinhas</p>
+          <p class="small text-muted-custom mb-0">&copy; 2024 LoreShelf. Plataforma literária para estudantes e leitores.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <ul class="list-inline mb-0 text-center text-md-end small">
+            <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Privacidade</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Guia da Biblioteca</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script Customizado da Aplicação -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

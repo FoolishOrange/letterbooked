@@ -7,7 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass assets/scss/main.scss assets/css/bootstrap.css",
+    "sass:watch": "sass --watch assets/scss/main.scss:assets/css/bootstrap.css",
+    "build": "sass --style=compressed assets/scss/main.scss assets/css/bootstrap.css"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "uuid": "^14.0.2"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "sass": "^1.107.1"
   }
 }

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Favoritos - EntreLinhas</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap compilado pelo Sass -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+  <!-- Estilos personalizados do projeto -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVBAR PRINCIPAL -->
+  <header class="custom-header">
+    <div class="container-xl d-flex justify-content-between align-items-center py-2 px-3 px-md-4">
+      
+      <!-- Brand Logo & Busca Rápida -->
+      <div class="d-flex align-items-center gap-3 gap-md-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none" href="index.html">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1WyhKmhhGFSf7rDL_OxRfQW-oLUwPMqLBmIOU8sj8qGxGnoYRZvKCv5X1bvaB6y8aK-mGACU-mNniQhPoo7lyP0R7fG5UcWmZvfmEsn-BOszDIDe30SqZujB_3wGzg2I1WTXCa6im9WjDwhDGf-g7iBzbMtuJeRugGdgLxglcSO-cgngGqw0q_FGa1uaOdnlTip3OTQrmNedVS3Juehkxs3RxQLUewn30yN_ZJJ5SNwjxlPBjqCWB7k9OI" alt="LoreShelf - EntreLinhas" height="36" class="d-inline-block align-text-top">
+        </a>
+
+        <!-- Campo de Pesquisa Rápida (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center position-relative">
+          <span class="material-symbols-outlined position-absolute ms-3 text-muted-custom fs-6">search</span>
+          <input class="form-control form-control-sm ps-5 pe-3 py-1 bg-surface-low border rounded-pill" type="text" placeholder="Pesquisar por título, autor..." style="width: 220px; font-size: 0.85rem;">
+        </div>
+      </div>
+
+      <!-- Links de Navegação -->
+      <nav class="d-none d-md-flex align-items-center gap-4">
+        <a class="nav-link-custom" href="index.html">
+          <span class="material-symbols-outlined fs-6">explore</span>
+          Explorar Livros
+        </a>
+        <a class="nav-link-custom active" href="favoritos.html">
+          <span>Meus Favoritos</span>
+          <span class="badge-fav-count" id="nav-fav-badge">4</span>
+        </a>
+      </nav>
+
+      <!-- Ações de Cabeçalho & Botão Entrar -->
+      <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-1">
+          <a class="header-icon-btn text-primary-custom" href="favoritos.html" title="Meus Favoritos">
+            <span class="material-symbols-outlined fill fs-5">favorite</span>
+          </a>
+          <button class="header-icon-btn d-none d-sm-inline-flex" title="Marcadores" type="button">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+          <a class="header-icon-btn" href="login.html" title="Perfil de Usuário">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </div>
+
+        <div class="vr mx-2 d-none d-sm-block text-secondary opacity-25" style="height: 24px;"></div>
+
+        <a class="btn btn-primary-custom d-flex align-items-center gap-1 text-decoration-none" href="login.html">
+          <span class="material-symbols-outlined fs-6">login</span>
+          <span>Entrar</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 2. CONTEÚDO PRINCIPAL -->
+  <main class="container-xl py-4 py-md-5 flex-grow-1 px-3 px-md-4">
+
+    <!-- Cabeçalho da Seção de Favoritos -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center pb-4 mb-4 border-bottom gap-3">
+      <div>
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-surface-low border text-primary-custom label-caps mb-2">
+          <span class="material-symbols-outlined fs-6 fill">auto_stories</span>
+          Estante Literária Particular
+        </div>
+        <h1 class="font-display display-6 text-dark mb-1">Meus Livros Favoritos</h1>
+        <p class="text-muted-custom mb-0">
+          Você possui <strong class="text-primary-custom" id="fav-total-count">4</strong> títulos salvos em sua biblioteca pessoal.
+        </p>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <button class="btn btn-outline-custom d-flex align-items-center gap-1 py-2 px-3" type="button" title="Exportar lista">
+          <span class="material-symbols-outlined fs-5">ios_share</span>
+          <span class="d-none d-sm-inline">Exportar lista</span>
+        </button>
+        <button class="btn btn-outline-custom text-danger d-flex align-items-center gap-1 py-2 px-3" type="button" title="Limpar estante">
+          <span class="material-symbols-outlined fs-5">delete_sweep</span>
+          <span class="d-none d-sm-inline">Limpar</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de Filtros e Busca Rápida na Estante -->
+    <div class="row g-3 align-items-center mb-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0 text-muted-custom">
+            <span class="material-symbols-outlined fs-5">search</span>
+          </span>
+          <input class="form-control border-start-0 ps-0 bg-white" type="text" placeholder="Buscar nos meus favoritos...">
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-8">
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <span class="label-caps text-muted-custom me-1">Gênero:</span>
+          <button class="filter-chip active">Todos (4)</button>
+          <button class="filter-chip">Clássicos (2)</button>
+          <button class="filter-chip">Distopia (1)</button>
+          <button class="filter-chip">Ficção (1)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grade / Lista de Livros Favoritos (Bootstrap Grid) -->
+    <div class="row g-4" id="favorites-list-container">
+
+      <!-- Item Favorito 1: Dom Casmurro -->
+      <div class="col-12 col-lg-6 fav-item-card">
+        <article class="card h-100 border rounded-3 p-3 bg-white shadow-sm transition-all">
+          <div class="row g-3 align-items-center">
+            <div class="col-4 col-sm-3">
+              <div class="book-cover-wrapper rounded-2">
+                <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAqHrL2wMLuNelKoSkpfD2SsgMsplSmDGM9sKuJC19K33pyDwN41Mr-N0XNaolV7zDak-4pPPUUmVxItpSaMthkmBT0sk8TqUhHoZa7pN6axLEeJDk2gLS4wTYwXJy48jVwpZ7I3EFXTw2xliuPFcnt1hQ-48h4H80t2GY8C7hXB3XyoUk0KZE2Yu4b6Hz7p1r89gSD9-xmfaF1cdKirLoq55S6jE7OqWbkWFJg4RhruJhOHq9JlWC" alt="Dom Casmurro">
+                <div class="book-spine-effect"></div>
+              </div>
+            </div>
+            <div class="col-8 col-sm-9 d-flex flex-column justify-content-between h-100">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <span class="badge-status-lido">LIDO</span>
+                  <button class="btn btn-link text-danger p-0 btn-remove-fav" data-book-title="Dom Casmurro" title="Remover dos favoritos">
+                    <span class="material-symbols-outlined fs-5">bookmark_remove</span>
+                  </button>
+                </div>
+                <h2 class="font-title-book text-dark mb-1 fs-5">Dom Casmurro</h2>
+                <p class="text-muted-custom small mb-2">Machado de Assis &bull; 1899 &bull; 256 págs</p>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge bg-surface-low border text-dark label-caps">Clássico</span>
+                  <div class="star-rating">
+                    <span class="material-symbols-outlined fill fs-6">star</span>
+                    <span class="small">4.8</span>
+                    <span class="text-muted-custom fw-normal small">(1.2k)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                <a class="btn btn-sm btn-outline-custom d-flex align-items-center gap-1" href="detalhes.html">
+                  <span>Ver Detalhes</span>
+                  <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                </a>
+                <span class="small text-muted-custom">Salvo recentemente</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Item Favorito 2: 1984 -->
+      <div class="col-12 col-lg-6 fav-item-card">
+        <article class="card h-100 border rounded-3 p-3 bg-white shadow-sm transition-all">
+          <div class="row g-3 align-items-center">
+            <div class="col-4 col-sm-3">
+              <div class="book-cover-wrapper rounded-2" style="background-color: #3b2c35;">
+                <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhZe_W0N-u1RjR3O5DXGDQfk3iTr_VAAsWkLg2M0FrsUW4sVhG3nGGWOqGP-a_J95An2iyba1RWM2er9jH0hqHUcpO0u8NwT7CpTcajG2TEaZZTuYPQc_04w6jd5R0DS_4vYzkVLWq_VWPLEEL5l6Qrubk8l2D2Tk2Ul6myBxbVxmRRumYaYQHveDc8a4dgF7b8ZWBdX75esaeFOwP7RIg79TE2r-xpcTj8-cjaLkx6DRW-NYLULv2" alt="1984">
+                <div class="book-spine-effect"></div>
+              </div>
+            </div>
+            <div class="col-8 col-sm-9 d-flex flex-column justify-content-between h-100">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <span class="badge-status-lendo">LENDO</span>
+                  <button class="btn btn-link text-danger p-0 btn-remove-fav" data-book-title="1984" title="Remover dos favoritos">
+                    <span class="material-symbols-outlined fs-5">bookmark_remove</span>
+                  </button>
+                </div>
+                <h2 class="font-title-book text-dark mb-1 fs-5">1984</h2>
+                <p class="text-muted-custom small mb-2">George Orwell &bull; 1949 &bull; 336 págs</p>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge bg-surface-low border text-dark label-caps">Distopia</span>
+                  <div class="star-rating">
+                    <span class="material-symbols-outlined fill fs-6">star</span>
+                    <span class="small">4.9</span>
+                    <span class="text-muted-custom fw-normal small">(3.4k)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                <a class="btn btn-sm btn-outline-custom d-flex align-items-center gap-1" href="detalhes.html">
+                  <span>Ver Detalhes</span>
+                  <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                </a>
+                <span class="small text-muted-custom">Capítulo 4 &bull; 35%</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Item Favorito 3: Memórias Póstumas de Brás Cubas -->
+      <div class="col-12 col-lg-6 fav-item-card">
+        <article class="card h-100 border rounded-3 p-3 bg-white shadow-sm transition-all">
+          <div class="row g-3 align-items-center">
+            <div class="col-4 col-sm-3">
+              <div class="book-cover-wrapper rounded-2" style="background-color: #223326;">
+                <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_PQcqogCPP9uC-L7hs6Dmrgt2YGGcfRRWzU7ypeQhrp5314mYsXMlgVvFuUh0uKfMyybOAkDwbc9aemFYh4xeTo6j4yDaUIDRwYBzv1l_SQvjfsKq1XrYTdEcjUjpeBKVCyGbaRClxtBfdVsxL9Ag_NG69cbI6zJQUX3_oUO6RI5-o9ZLuCqIa57n8sZ_3MI-8_BVeMuQH8oUKEIAN30oDDJK8XhquLs2s8Bz7q20_wfYBaOGT3x6" alt="Memórias Póstumas de Brás Cubas">
+                <div class="book-spine-effect"></div>
+              </div>
+            </div>
+            <div class="col-8 col-sm-9 d-flex flex-column justify-content-between h-100">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <span class="badge-status-lido">LIDO</span>
+                  <button class="btn btn-link text-danger p-0 btn-remove-fav" data-book-title="Memórias Póstumas de Brás Cubas" title="Remover dos favoritos">
+                    <span class="material-symbols-outlined fs-5">bookmark_remove</span>
+                  </button>
+                </div>
+                <h2 class="font-title-book text-dark mb-1 fs-5">Memórias Póstumas de Brás Cubas</h2>
+                <p class="text-muted-custom small mb-2">Machado de Assis &bull; 1881 &bull; 208 págs</p>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge bg-surface-low border text-dark label-caps">Clássico</span>
+                  <div class="star-rating">
+                    <span class="material-symbols-outlined fill fs-6">star</span>
+                    <span class="small">4.9</span>
+                    <span class="text-muted-custom fw-normal small">(980)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                <a class="btn btn-sm btn-outline-custom d-flex align-items-center gap-1" href="detalhes.html">
+                  <span>Ver Detalhes</span>
+                  <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                </a>
+                <span class="small text-muted-custom">Salvo na estante</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Item Favorito 4: Duna -->
+      <div class="col-12 col-lg-6 fav-item-card">
+        <article class="card h-100 border rounded-3 p-3 bg-white shadow-sm transition-all">
+          <div class="row g-3 align-items-center">
+            <div class="col-4 col-sm-3">
+              <div class="book-cover-wrapper rounded-2" style="background-color: #4c3b24;">
+                <img class="book-cover-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBce0jA37Mj2jQ7fdD4o6w_9dC8AtFWOAkN_qLbEHr_hJeUYyeSVBwHFq0v-jeMDshoRgasqAHAGHAsk6LyuGaQEt_DhFyhF6lZJBoUysNgedRYYsmyPUGY4LYcwemEx_86VyJDw2ZUgsBT6A6Zf2sCpRGv7brm6ZRAkV212qbjN0kXBqS22if-vOLi-mdNj6GYhWUYqWE-1HLvESGU0npWHatAqXBrY2wKYeFUfpV5Be4zUofHwUN" alt="Duna">
+                <div class="book-spine-effect"></div>
+              </div>
+            </div>
+            <div class="col-8 col-sm-9 d-flex flex-column justify-content-between h-100">
+              <div>
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                  <span class="badge-status-quero-ler">QUERO LER</span>
+                  <button class="btn btn-link text-danger p-0 btn-remove-fav" data-book-title="Duna" title="Remover dos favoritos">
+                    <span class="material-symbols-outlined fs-5">bookmark_remove</span>
+                  </button>
+                </div>
+                <h2 class="font-title-book text-dark mb-1 fs-5">Duna</h2>
+                <p class="text-muted-custom small mb-2">Frank Herbert &bull; 1965 &bull; 680 págs</p>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="badge bg-surface-low border text-dark label-caps">Ficção Científica</span>
+                  <div class="star-rating">
+                    <span class="material-symbols-outlined fill fs-6">star</span>
+                    <span class="small">4.7</span>
+                    <span class="text-muted-custom fw-normal small">(2.1k)</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-2 border-top d-flex justify-content-between align-items-center">
+                <a class="btn btn-sm btn-outline-custom d-flex align-items-center gap-1" href="detalhes.html">
+                  <span>Ver Detalhes</span>
+                  <span class="material-symbols-outlined fs-6">arrow_forward</span>
+                </a>
+                <span class="small text-muted-custom">Na fila de espera</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- Seção de Chamada para Descobrir Mais -->
+    <section class="card bg-surface-low border rounded-4 p-4 p-md-5 mt-5 text-center text-md-start">
+      <div class="row align-items-center gy-3">
+        <div class="col-12 col-md-8">
+          <h3 class="font-display h4 text-dark mb-2">Quer descobrir mais leituras?</h3>
+          <p class="text-muted-custom mb-0">
+            Navegue pelo nosso acervo com milhares de obras, autores clássicos e recomendações personalizadas.
+          </p>
+        </div>
+        <div class="col-12 col-md-4 text-center text-md-end">
+          <a class="btn btn-primary-custom d-inline-flex align-items-center gap-2 py-2 px-4 text-decoration-none" href="index.html">
+            <span class="material-symbols-outlined fs-5">menu_book</span>
+            <span>Explorar Livros</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 3. RODAPÉ EDITORIAL -->
+  <footer class="custom-footer">
+    <div class="container-xl px-3 px-md-4">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <p class="mb-1 text-dark fw-bold">LoreShelf / EntreLinhas</p>
+          <p class="small text-muted-custom mb-0">&copy; 2024 LoreShelf. Plataforma literária para estudantes e leitores.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <ul class="list-inline mb-0 text-center text-md-end small">
+            <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Privacidade</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Guia da Biblioteca</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script Customizado da Aplicação -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

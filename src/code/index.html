@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EntreLinhas - Explorar &amp; Pesquisa de Livros</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap compilado pelo Sass -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+  <!-- Estilos personalizados do projeto -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER / NAVBAR PRINCIPAL -->
+  <header class="custom-header">
+    <div class="container-xl d-flex justify-content-between align-items-center py-2 px-3 px-md-4">
+      
+      <!-- Brand Logo & Busca Rápida -->
+      <div class="d-flex align-items-center gap-3 gap-md-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none" href="index.html">
+          <img src="https://lh3.googleusercontent.com/aida/AEtjO1WyhKmhhGFSf7rDL_OxRfQW-oLUwPMqLBmIOU8sj8qGxGnoYRZvKCv5X1bvaB6y8aK-mGACU-mNniQhPoo7lyP0R7fG5UcWmZvfmEsn-BOszDIDe30SqZujB_3wGzg2I1WTXCa6im9WjDwhDGf-g7iBzbMtuJeRugGdgLxglcSO-cgngGqw0q_FGa1uaOdnlTip3OTQrmNedVS3Juehkxs3RxQLUewn30yN_ZJJ5SNwjxlPBjqCWB7k9OI" alt="LoreShelf - EntreLinhas" height="36" class="d-inline-block align-text-top">
+        </a>
+
+        <!-- Campo de Pesquisa Rápida (Desktop) -->
+        <div class="d-none d-lg-flex align-items-center position-relative">
+          <span class="material-symbols-outlined position-absolute ms-3 text-muted-custom fs-6">search</span>
+          <input class="form-control form-control-sm ps-5 pe-3 py-1 bg-surface-low border rounded-pill" type="text" placeholder="Pesquisa rápida..." style="width: 220px; font-size: 0.85rem;">
+        </div>
+      </div>
+
+      <!-- Links de Navegação -->
+      <nav class="d-none d-md-flex align-items-center gap-4">
+        <a class="nav-link-custom active" href="index.html">
+          <span class="material-symbols-outlined fs-6">explore</span>
+          Explorar Livros
+        </a>
+        <a class="nav-link-custom" href="favoritos.html">
+          <span>Meus Favoritos</span>
+          <span class="badge-fav-count" id="nav-fav-badge">4</span>
+        </a>
+      </nav>
+
+      <!-- Ações de Cabeçalho & Botão Entrar -->
+      <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-1">
+          <a class="header-icon-btn" href="favoritos.html" title="Meus Favoritos">
+            <span class="material-symbols-outlined fill text-primary-custom">favorite</span>
+          </a>
+          <button class="header-icon-btn d-none d-sm-inline-flex" title="Marcadores" type="button">
+            <span class="material-symbols-outlined">bookmark</span>
+          </button>
+          <a class="header-icon-btn" href="login.html" title="Perfil de Usuário">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </div>
+
+        <div class="vr mx-2 d-none d-sm-block text-secondary opacity-25" style="height: 24px;"></div>
+
+        <a class="btn btn-primary-custom d-flex align-items-center gap-1 text-decoration-none" href="login.html">
+          <span class="material-symbols-outlined fs-6">login</span>
+          <span>Entrar</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 2. CONTEÚDO PRINCIPAL (CANVAS EDITORIAL) -->
+  <main class="container-xl py-4 py-md-5 flex-grow-1 px-3 px-md-4">
+    
+    <!-- Seção Hero & Busca Principal -->
+    <section class="mb-5 text-center text-md-start">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-surface-low border text-primary-custom label-caps mb-3">
+            <span class="material-symbols-outlined fs-6">local_library</span>
+            Acervo Digital Acadêmico &amp; Literatura Geral
+          </div>
+          <h1 class="font-display display-5 text-dark mb-3">
+            Descubra sua próxima leitura
+          </h1>
+          <p class="lead text-muted-custom mb-4" style="font-size: 1.125rem;">
+            Pesquise entre milhares de títulos, explore clássicos e contemporâneos e organize sua estante de favoritos com facilidade.
+          </p>
+        </div>
+      </div>
+
+      <!-- Barra de Pesquisa Expandida (Grid do Bootstrap) -->
+      <div class="search-container-box mb-3">
+        <div class="row g-2 align-items-center">
+          <div class="col-12 col-sm d-flex align-items-center px-3">
+            <span class="material-symbols-outlined text-muted-custom fs-4 me-2">search</span>
+            <input class="search-input-field" id="main-search-input" type="text" placeholder="Buscar por título, autor, gênero ou palavra-chave..." value="Machado de Assis">
+            <button class="btn btn-link text-muted-custom p-1" id="clear-search-btn" title="Limpar busca" type="button">
+              <span class="material-symbols-outlined fs-5">close</span>
+            </button>
+          </div>
+          <div class="col-12 col-sm-auto">
+            <button class="btn btn-primary-custom w-100 d-flex align-items-center" type="button">
+              <span class="material-symbols-outlined fs-5">manage_search</span>
+              <span>Pesquisar</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Chips de Filtros Rápidos por Gênero -->
+      <div class="filter-chips-container mt-2">
+        <span class="label-caps text-muted-custom me-2">Filtrar:</span>
+        <button class="filter-chip active" data-filter="all">Todos os Livros</button>
+        <button class="filter-chip" data-filter="Clássico">Clássicos</button>
+        <button class="filter-chip" data-filter="Ficção">Ficção Científica</button>
+        <button class="filter-chip" data-filter="Romance">Romance</button>
+        <button class="filter-chip" data-filter="Fantasia">Fantasia</button>
+        <button class="filter-chip" data-filter="Distopia">Distopia</button>
+        <button class="filter-chip" data-filter="Naturalismo">Naturalismo</button>
+        <button class="filter-chip" data-filter="Filosofia">Filosofia</button>
+      </div>
+    </section>
+
+    <!-- 3. BARRA DE STATUS DE RESULTADOS & CONTROLES -->
+    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center pb-3 mb-4 border-bottom gap-3">
+      <div class="d-flex align-items-center gap-2">
+        <p class="mb-0 text-dark" style="font-size: 0.95rem;">
+          Exibindo <strong class="text-primary-custom" id="results-count">8</strong> de <strong>42</strong> livros encontrados
+        </p>
+        <span class="d-inline-block rounded-circle bg-secondary" style="width: 5px; height: 5px;"></span>
+        <span class="text-muted-custom small">Termo ativo: "Machado de Assis"</span>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <!-- Dropdown de Ordenação -->
+        <div class="d-flex align-items-center gap-2 bg-surface-low border rounded px-3 py-1">
+          <span class="small text-muted-custom">Ordenar por:</span>
+          <select class="form-select form-select-sm border-0 bg-transparent p-0 pe-4 shadow-none fw-semibold" style="cursor: pointer; width: auto;">
+            <option selected>Mais populares</option>
+            <option>Mais recentes</option>
+            <option>Título A-Z</option>
+            <option>Melhor avaliados</option>
+          </select>
+        </div>
+
+        <!-- Seletor de Modo de Visualização -->
+        <div class="btn-group btn-group-sm bg-surface-low border p-1 rounded" role="group">
+          <button class="btn btn-sm bg-white shadow-xs text-primary-custom p-1" title="Visualização em Grade">
+            <span class="material-symbols-outlined fs-6">grid_view</span>
+          </button>
+          <button class="btn btn-sm text-secondary p-1" title="Visualização em Lista">
+            <span class="material-symbols-outlined fs-6">view_list</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. GRADE DE LIVROS (12 COLUNAS DO BOOTSTRAP 5) -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="books-grid">
+
+      <!-- Card 1: Dom Casmurro -->
+      <div class="col catalog-book-col" data-title="Dom Casmurro" data-author="Machado de Assis" data-category="Clássico Brasileiro">
+        <article class="book-card">
+         <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/domcasmurro.webp" alt="Capa do livro Dom Casmurro" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Clássico Brasileiro</span>
+              <button class="btn-floating-fav favorited" data-book-title="Dom Casmurro" title="Remover dos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+            </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.8</span>
+                <span class="text-muted-custom fw-normal small">(1.420)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">Dom Casmurro</h3>
+              <p class="text-muted-custom small mb-0">Machado de Assis</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1899
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 256 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 2: 1984 -->
+      <div class="col catalog-book-col" data-title="1984" data-author="George Orwell" data-category="Distopia">
+        <article class="book-card">
+          <div class="book-cover-container">
+          <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+                <img src="../../assets/img/1984.webp" alt="Capa do livro 1984" class="book-cover" loading="lazy"/>
+                <div class="book-spine-effect"></div>
+                <span class="book-category-tag">Distopia</span>
+                <button class="btn-floating-fav favorited" data-book-title="1984" title="Remover dos favoritos" type="button">
+                  <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.9</span>
+                <span class="text-muted-custom fw-normal small">(3.850)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">1984</h3>
+              <p class="text-muted-custom small mb-0">George Orwell</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1949
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 336 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 3: Memórias Póstumas de Brás Cubas -->
+      <div class="col catalog-book-col" data-title="Memórias Póstumas de Brás Cubas" data-author="Machado de Assis" data-category="Clássico Brasileiro">
+        <article class="book-card">
+          <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/memorias.webp" alt="Capa do livro Dom Casmurro" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Clássico Brasileiro</span>
+              <button class="btn-floating-fav favorited" data-book-title="Dom Casmurro" title="Remover dos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+            </div>
+          </div>           
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.9</span>
+                <span class="text-muted-custom fw-normal small">(2.110)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">Memórias Póstumas</h3>
+              <p class="text-muted-custom small mb-0">Machado de Assis</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1881
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 208 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 4: Duna -->
+      <div class="col catalog-book-col" data-title="Duna" data-author="Frank Herbert" data-category="Ficção Científica">
+        <article class="book-card">
+           <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/duna.webp" alt="Capa do livro Duna" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Ficção Científica</span>
+              <button class="btn-floating-fav favorited" data-book-title="Duna" title="Remover dos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+            </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.7</span>
+                <span class="text-muted-custom fw-normal small">(2.980)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">Duna</h3>
+              <p class="text-muted-custom small mb-0">Frank Herbert</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1965
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 680 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 5: O Cortiço -->
+      <div class="col catalog-book-col" data-title="O Cortiço" data-author="Aluísio Azevedo" data-category="Naturalismo">
+        <article class="book-card">
+           <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/ocortico.webp" alt="Capa do livro O Cortiço" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Naturalismo</span>
+              <button class="btn-floating-fav" data-book-title="O Cortiço" title="Adicionar aos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+            </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.5</span>
+                <span class="text-muted-custom fw-normal small">(870)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">O Cortiço</h3>
+              <p class="text-muted-custom small mb-0">Aluísio Azevedo</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1890
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 304 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 6: Orgulho e Preconceito -->
+      <div class="col catalog-book-col" data-title="Orgulho e Preconceito" data-author="Jane Austen" data-category="Romance Clássico">
+        <article class="book-card">
+          <div class="book-cover-container">
+            <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/op.webp" alt="Capa do livro Orgulho e Preconceito" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Romance Clássico</span>
+              <button class="btn-floating-fav" data-book-title="Orgulho e Preconceito" title="Adicionar aos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+          </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.9</span>
+                <span class="text-muted-custom fw-normal small">(4.200)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">Orgulho e Preconceito</h3>
+              <p class="text-muted-custom small mb-0">Jane Austen</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1813
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 424 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 7: Fahrenheit 451 -->
+      <div class="col catalog-book-col" data-title="Fahrenheit 451" data-author="Ray Bradbury" data-category="Ficção & Distopia">
+        <article class="book-card">
+          <div class="book-cover-container">
+          <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/f451.webp" alt="Capa do livro Fahrenheit 451" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Ficção &amp; Distopia</span>
+              <button class="btn-floating-fav" data-book-title="Fahrenheit 451" title="Adicionar aos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+          </div>
+          </div>
+          <div class="book-card-body">  
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.6</span>
+                <span class="text-muted-custom fw-normal small">(1.750)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">Fahrenheit 451</h3>
+              <p class="text-muted-custom small mb-0">Ray Bradbury</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1953
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 216 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 8: A Hora da Estrela -->
+      <div class="col catalog-book-col" data-title="A Hora da Estrela" data-author="Clarice Lispector" data-category="Clássico Moderno">
+        <article class="book-card">
+          <div class="book-cover-container">
+          <div class="book-cover-wrapper" style="background-color: #3b2c35;">
+              <img src="../../assets/img/ahora.webp" alt="Capa do livro A Hora da Estrela" class="book-cover" loading="lazy"/>
+              <div class="book-spine-effect"></div>
+              <span class="book-category-tag">Clássico Moderno</span>
+              <button class="btn-floating-fav" data-book-title="A Hora da Estrela" title="Adicionar aos favoritos" type="button">
+                <span class="material-symbols-outlined fill text-primary-custom fs-5">favorite</span>
+              </button>
+          </div>
+          </div>
+          <div class="book-card-body">
+            <div>
+              <div class="star-rating mb-1">
+                <span class="material-symbols-outlined fill fs-6">star</span>
+                <span>4.8</span>
+                <span class="text-muted-custom fw-normal small">(2.430)</span>
+              </div>
+              <h3 class="font-title-book text-dark mb-1 text-truncate">A Hora da Estrela</h3>
+              <p class="text-muted-custom small mb-0">Clarice Lispector</p>
+            </div>
+            <div>
+              <div class="book-meta-footer">
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">calendar_today</span> 1977
+                </span>
+                <span class="d-flex align-items-center gap-1">
+                  <span class="material-symbols-outlined fs-6">menu_book</span> 96 págs
+                </span>
+              </div>
+              <a class="btn btn-outline-custom w-100 mt-3" href="detalhes.html">Ver Detalhes</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+    </div>
+
+    <!-- Paginação / Botão Carregar Mais -->
+    <div class="text-center mt-5 mb-3">
+      <button class="btn btn-outline-custom px-4 py-2 d-inline-flex align-items-center gap-2">
+        <span class="material-symbols-outlined fs-5">expand_more</span>
+        Carregar Mais Obras
+      </button>
+    </div>
+
+  </main>
+
+  <!-- 5. RODAPÉ EDITORIAL CONFORME DESIGN SYSTEM -->
+  <footer class="custom-footer">
+    <div class="container-xl px-3 px-md-4">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-6 text-center text-md-start">
+          <p class="mb-1 text-dark fw-bold">LoreShelf / EntreLinhas</p>
+          <p class="small text-muted-custom mb-0">&copy; 2024 LoreShelf. Plataforma literária para estudantes e leitores.</p>
+        </div>
+        <div class="col-12 col-md-6">
+          <ul class="list-inline mb-0 text-center text-md-end small">
+            <li class="list-inline-item"><a href="#">Termos de Uso</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Privacidade</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Guia da Biblioteca</a></li>
+            <li class="list-inline-item mx-2">&bull;</li>
+            <li class="list-inline-item"><a href="#">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS (com Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script Customizado da Aplicação -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

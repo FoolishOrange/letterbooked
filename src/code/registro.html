@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoreShelf - Criar Conta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap compilado pelo Sass -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.css">
+
+  <!-- Estilos personalizados do projeto -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+</head> 
+<body class="bg-surface-low">
+
+  <header class="custom-header">
+    <div class="container-xl d-flex justify-content-between align-items-center py-3 px-3 px-md-4">
+      <a class="d-flex align-items-center gap-2 text-decoration-none" href="index.html">
+        <span class="material-symbols-outlined text-primary-custom fs-3 fill">local_library</span>
+        <span class="brand-title fs-4">LoreShelf</span>
+      </a>
+      <a class="nav-link-custom d-flex align-items-center gap-1" href="index.html">
+        <span class="material-symbols-outlined fs-6">arrow_back</span>
+        <span>Voltar para explorar</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- CANVAS CENTRAL: SPLIT-LAYOUT EDITORIAL -->
+  <main class="auth-wrapper flex-grow-1">
+    <div class="container-xl">
+      <div class="row justify-content-center">
+        <div class="col-12 col-xl-11">
+          
+          <div class="card auth-card-split border-0">
+            <div class="row g-0">
+
+              <!-- LADO ESQUERDO: Painel Visual Literário -->
+              <div class="col-12 col-lg-5 auth-panel-visual position-relative">
+                <div class="position-relative z-1">
+                  <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border border-secondary border-opacity-25 bg-dark mb-4 text-warning label-caps">
+                    <span class="material-symbols-outlined fs-6 fill">auto_stories</span>
+                    Arquivo &amp; Coleção Digital
+                  </div>
+                  <h1 class="font-display display-6 text-white mb-3">Crie sua biblioteca</h1>
+                  <p class="text-secondary-light lead fs-6 mb-4">
+                    Salve seus livros favoritos e organize suas próximas leituras com o rigor estético que sua coleção merece.
+                  </p>
+
+                  <!-- Recursos em Destaque -->
+                  <div class="d-flex flex-column gap-3 mb-4">
+                    <div class="d-flex align-items-start gap-3">
+                      <span class="material-symbols-outlined text-warning fs-5">shelves</span>
+                      <div>
+                        <h6 class="text-white mb-0 fw-semibold">Prateleiras Personalizadas</h6>
+                        <small class="text-secondary-light">Categorização por eras, temas, tomos e status de leitura.</small>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3">
+                      <span class="material-symbols-outlined text-warning fs-5">groups</span>
+                      <div>
+                        <h6 class="text-white mb-0 fw-semibold">Comunidade &amp; Vestibulares</h6>
+                        <small class="text-secondary-light">Guias acadêmicos e resenhas de clássicos universais.</small>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start gap-3">
+                      <span class="material-symbols-outlined text-warning fs-5">sync</span>
+                      <div>
+                        <h6 class="text-white mb-0 fw-semibold">Sincronização Contínua</h6>
+                        <small class="text-secondary-light">Acesse sua estante onde e quando quiser com leveza.</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Citação Literária -->
+                <div class="auth-quote-box position-relative z-1 my-3">
+                  <p class="font-display fst-italic text-white mb-1 small" style="line-height: 1.5;">
+                    “Um refúgio para as mentes que buscam a eternidade na palavra escrita.”
+                  </p>
+                  <span class="small text-secondary-light opacity-75">Manifesto EntreLinhas</span>
+                </div>
+
+                <!-- Rodapé do Painel Esquerdo -->
+                <div class="position-relative z-1 pt-3 border-top border-secondary border-opacity-25 small text-secondary-light">
+                  <span>Plataforma Acadêmica Livre de Rastreamento</span>
+                </div>
+              </div>
+
+              <!-- LADO DIREITO: Formulário de Registro -->
+              <div class="col-12 col-lg-7 auth-panel-form">
+                <div class="w-100" style="max-width: 460px; margin: 0 auto;">
+                  
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                      <h2 class="font-display h3 text-white mb-1">Criar conta</h2>
+                      <p class="text-secondary-light small mb-0">Cadastre-se na biblioteca LoreShelf</p>
+                    </div>
+                    <div class="rounded-circle border border-secondary border-opacity-25 d-flex align-items-center justify-content-center text-warning" style="width: 42px; height: 42px; background-color: #131118;">
+                      <span class="material-symbols-outlined fs-5">person_add</span>
+                    </div>
+                  </div>
+
+                  <!-- Formulário de Criação de Conta -->
+                  <form action="#" method="POST" onsubmit="event.preventDefault(); window.location.href='index.html';">
+                    
+                    <!-- Campo Nome Completo -->
+                    <div class="mb-3">
+                      <label class="auth-form-label" for="reg-name">Nome completo</label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-secondary-light">
+                          <span class="material-symbols-outlined fs-5">badge</span>
+                        </span>
+                        <input class="form-control auth-form-control" id="reg-name" type="text" placeholder="Seu nome completo" required value="Leitor Acadêmico">
+                      </div>
+                    </div>
+
+                    <!-- Campo E-mail -->
+                    <div class="mb-3">
+                      <label class="auth-form-label" for="reg-email">E-mail</label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-secondary-light">
+                          <span class="material-symbols-outlined fs-5">mail</span>
+                        </span>
+                        <input class="form-control auth-form-control" id="reg-email" type="email" placeholder="seu.email@exemplo.com" required value="novo.leitor@universidade.edu.br">
+                      </div>
+                    </div>
+
+                    <!-- Campo Senha -->
+                    <div class="mb-3">
+                      <label class="auth-form-label" for="reg-password">Senha</label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-secondary-light">
+                          <span class="material-symbols-outlined fs-5">key</span>
+                        </span>
+                        <input class="form-control auth-form-control" id="reg-password" type="password" placeholder="Mínimo 8 caracteres" required value="senhaForte2024">
+                        <button class="btn btn-outline-secondary border-opacity-25 toggle-password-btn text-secondary-light" data-target="reg-password" type="button" title="Mostrar/ocultar senha">
+                          <span class="material-symbols-outlined fs-5">visibility</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Campo Confirmar Senha -->
+                    <div class="mb-3">
+                      <label class="auth-form-label" for="reg-password-confirm">Confirmar senha</label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary border-opacity-25 text-secondary-light">
+                          <span class="material-symbols-outlined fs-5">lock_reset</span>
+                        </span>
+                        <input class="form-control auth-form-control" id="reg-password-confirm" type="password" placeholder="Repita sua senha" required value="senhaForte2024">
+                        <button class="btn btn-outline-secondary border-opacity-25 toggle-password-btn text-secondary-light" data-target="reg-password-confirm" type="button" title="Mostrar/ocultar senha">
+                          <span class="material-symbols-outlined fs-5">visibility</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Aceite dos Termos -->
+                    <div class="form-check mb-4">
+                      <input class="form-check-input bg-dark border-secondary" type="checkbox" id="accept-terms" required checked>
+                      <label class="form-check-label text-secondary-light small" for="accept-terms">
+                        Aceito os <a class="text-warning text-decoration-none" href="#">termos de uso</a> e a <a class="text-warning text-decoration-none" href="#">política de privacidade</a>
+                      </label>
+                    </div>
+
+                    <!-- Botão Submeter -->
+                    <button class="btn btn-primary-custom w-100 py-2 d-flex align-items-center justify-content-center gap-2 mb-4" type="submit">
+                      <span>Criar minha conta</span>
+                      <span class="material-symbols-outlined fs-5">arrow_forward</span>
+                    </button>
+
+                  </form>
+
+                  <!-- Link para Login -->
+                  <div class="text-center pt-3 border-top border-secondary border-opacity-25">
+                    <p class="text-secondary-light small mb-0">
+                      Já possui uma conta? 
+                      <a class="text-warning text-decoration-none fw-bold ms-1" href="login.html">Entrar</a>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. RODAPÉ SIMPLES -->
+  <footer class="text-center py-3 text-muted small border-top bg-white">
+    <div class="container">
+      &copy; 2024 LoreShelf. Plataforma literária para estudantes e leitores.
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script Customizado da Aplicação -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+

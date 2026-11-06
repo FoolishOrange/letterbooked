@@ -1,0 +1,45 @@
+
+// 1. VARIÁVEIS
+
+$color-primary: #9f3c16;
+$color-secondary: #545f73;
+$border-radius-card: 0.75rem;
+
+// 2. DESIGN SYSTEM
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+}
+
+// 3. MIXIN REUTILIZÁVEL
+
+@mixin card-style {
+  border-radius: $border-radius-card;
+  box-shadow: 0 4px 14px rgba(30, 41, 59, 0.05);
+  border: 1px solid #e4e2de;
+}
+
+// 4. FUNÇÃO
+
+@function spacing($value) {
+  @return $value * 0.25rem;
+}
+
+// 5. DEMONSTRAÇÃO DO MIXIN E DA FUNÇÃO
+
+.sass-card-demo {
+  @include card-style;
+  padding: spacing(4);
+}
+
+.sass-login-demo {
+  @include card-style;
+  padding: spacing(6);
+}
+
+// 6. BOOTSTRAP
+
+$primary: $color-primary;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
