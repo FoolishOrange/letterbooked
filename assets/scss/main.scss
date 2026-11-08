@@ -26,16 +26,14 @@ $border-radius-card: 0.75rem;
   @return $value * 0.25rem;
 }
 
-// 5. DEMONSTRAÇÃO DO MIXIN E DA FUNÇÃO
+// 5. APLICAÇÃO DO MIXIN E DA FUNÇÃO EM COMPONENTES REAIS
 
-.sass-card-demo {
+.sass-card-style {
   @include card-style;
-  padding: spacing(4);
 }
 
-.sass-login-demo {
-  @include card-style;
-  padding: spacing(6);
+.sass-card-spacing {
+  padding: spacing(4);
 }
 
 // 6. BOOTSTRAP

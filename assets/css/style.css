@@ -6,15 +6,25 @@
 
 /* 1. VARIÁVEIS GLOBAIS DO SISTEMA DE DESIGN & BOOTSTRAP OVERRIDES */
 :root {
-  /* Cores */
+  /* Cores principais */
+  --color-primary: #9f3c16;
+  --color-primary-hover: #7f3012;
+  --color-primary-accent: #c65b2a;
+  --color-primary-fixed: #f5e3da;
+
   --color-secondary: #545f73;
   --color-background: #f8f5f0;
   --color-surface: #ffffff;
+  --color-surface-low: #f8f5f0;
   --color-text: #292929;
+  --color-text-muted: #777777;
+  --color-border: #e4e2de;
 
   /* Tipografia */
   --font-primary: "Plus Jakarta Sans", sans-serif;
   --font-heading: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Playfair Display", serif;
 
   /* Espaçamentos */
   --spacing-sm: 0.5rem;

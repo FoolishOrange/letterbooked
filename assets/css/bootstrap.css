@@ -1,4 +1,4 @@
-﻿:root{--color-primary: #9f3c16;--color-secondary: #545f73}.sass-card-demo{border-radius:.75rem;box-shadow:0 4px 14px rgba(30,41,59,.05);border:1px solid #e4e2de;padding:1rem}.sass-login-demo{border-radius:.75rem;box-shadow:0 4px 14px rgba(30,41,59,.05);border:1px solid #e4e2de;padding:1.5rem}/*!
+﻿:root{--color-primary: #9f3c16;--color-secondary: #545f73}.sass-card-style{border-radius:.75rem;box-shadow:0 4px 14px rgba(30,41,59,.05);border:1px solid #e4e2de}.sass-card-spacing{padding:1rem}/*!
  * Bootstrap  v5.3.8 (https://getbootstrap.com/)
  * Copyright 2011-2025 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
