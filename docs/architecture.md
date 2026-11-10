@@ -260,18 +260,4 @@ letterbooked/
 - `assets/img/`: armazena imagens utilizadas na interface.
 - `docs/`: reúne a documentação técnica e de requisitos do projeto.
 
-## 7. Limitações e Evoluções Futuras
-
-Por se tratar de um protótipo, algumas funcionalidades ainda não possuem implementação completa.
-
-Entre as possíveis evoluções estão:
-
-- Integração efetiva com a Open Library API para obtenção dinâmica dos livros.
-- Implementação de um sistema real de cadastro e autenticação.
-- Criação de um banco de dados para armazenar usuários e favoritos.
-- Sincronização dos favoritos entre diferentes dispositivos.
-- Desenvolvimento de uma API própria para gerenciar os dados da aplicação.
-
-Essas funcionalidades não fazem parte da arquitetura implementada atualmente e dependem de etapas futuras de desenvolvimento.
-
 ---
