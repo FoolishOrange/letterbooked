@@ -5,7 +5,7 @@
 
 O EntreLinhas é um protótipo de uma plataforma de catálogo literário, desenvolvido para permitir a visualização, pesquisa e organização de livros.
 
-A aplicação utiliza uma arquitetura front-end, construída com HTML, CSS, JavaScript e Bootstrap. Atualmente, não possui servidor próprio, banco de dados ou sistema de autenticação funcional.
+A aplicação utiliza uma arquitetura front-end, construída com HTML, CSS, JavaScript e Bootstrap. 
 
 O catálogo apresenta informações de livros em páginas HTML, enquanto os favoritos são armazenados localmente no navegador por meio da Web Storage API (`localStorage`).
 
